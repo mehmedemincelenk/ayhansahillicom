@@ -38,7 +38,7 @@ const testimonialExamples = [
   ["Ortaokul matematik · 7. sınıf", "problem sorularındaki gelişimini", "soru çözme isteğindeki artışı"],
   ["YKS hazırlık · mezun", "yeniden hazırlık dönemindeki planını", "süreç boyunca sürdürülen takibi"],
   ["LGS hazırlık · 8. sınıf", "deneme analizlerinden nasıl yararlandığını", "eksiklerin düzenli kapatılmasını"],
-  ["Online ders · 10. sınıf", "online dersin verimliliğini", "uzaktan dersteki iletişim ve düzeni"],
+  ["Birebir ders · 10. sınıf", "birebir dersin verimliliğini ve odaklanmayı", "ders temposundaki istikrarı ve düzeni"],
   ["Yüz yüze ders · 7. sınıf", "birebir pratikte yaşadığı gelişimi", "ders sonrasındaki olumlu değişimi"],
   ["TYT matematik · 12. sınıf", "soru çözme hızındaki gelişimi", "zaman yönetiminde gözlemlediği ilerlemeyi"],
   ["Okula destek · 5. sınıf", "matematik temelini nasıl güçlendirdiğini", "ödev ve tekrar düzenindeki gelişimi"],
@@ -50,7 +50,7 @@ const testimonialExamples = [
   ["Okula destek · 9. sınıf", "anlamadığı soruları ifade etme rahatlığını", "öğretmen–öğrenci iletişiminin etkisini"],
   ["YKS hazırlık · mezun", "kişisel çalışma planının katkısını", "motivasyonunun korunmasını"],
   ["Ortaokul matematik · 7. sınıf", "düzenli soru çözme alışkanlığını", "sorumluluk alma konusundaki gelişimi"],
-  ["Online ders · 8. sınıf", "dijital derslerdeki pratik sürecini", "online dersin takibini ve verimini"],
+  ["LGS hazırlık · 8. sınıf", "birebir soru çözümlerindeki hız ve pratikliği", "düzenli konu takibini ve sınav verimini"],
   ["Lise matematik · 10. sınıf", "zorlandığı konularda kazandığı yöntemi", "öğrenciye özel planın sonuçlarını"],
 ];
 
@@ -187,17 +187,17 @@ contactForm?.addEventListener("submit", (event) => {
   const name = formData.get("name");
   const role = formData.get("role");
   const level = formData.get("level");
-  const format = formData.get("format");
+  const location = formData.get("location");
   const goal = String(formData.get("goal") || "").trim();
   const phoneNumber = contactForm.dataset.whatsappNumber?.replace(/\D/g, "") ?? "";
 
   const message = [
-    "Merhaba Ayhan Hocam, matematik özel dersi hakkında bilgi almak istiyorum.",
+    "Merhaba Ayhan Hocam, yüz yüze matematik özel dersi hakkında bilgi almak istiyorum.",
     "",
     `Adım: ${name}`,
     `Başvuru: ${role}`,
     `Sınıf / hazırlık: ${level}`,
-    `Ders tercihi: ${format}`,
+    location ? `İlçe / Bölge: ${location}` : "",
     goal ? `Hedef / ihtiyaç: ${goal}` : "",
   ]
     .filter(Boolean)
